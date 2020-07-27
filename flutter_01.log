@@ -1,0 +1,122 @@
+Flutter crash report.
+Please report a bug at https://github.com/flutter/flutter/issues.
+
+## command
+
+flutter run --release -d chrome
+
+## exception
+
+YamlException: Error on line 109, column 13: Mapping values are not allowed here. Did you miss a colon earlier?
+    ╷
+109 │        fonts:
+    │             ^
+    ╵
+
+```
+#0      Scanner._fetchValue (package:yaml/src/scanner.dart:713:9)
+#1      Scanner._fetchNextToken (package:yaml/src/scanner.dart:457:11)
+#2      Scanner._fetchMoreTokens (package:yaml/src/scanner.dart:339:7)
+#3      Scanner.peek (package:yaml/src/scanner.dart:317:27)
+#4      Parser._parseBlockMappingKey (package:yaml/src/parser.dart:412:26)
+#5      Parser._stateMachine (package:yaml/src/parser.dart:86:16)
+#6      Parser.parse (package:yaml/src/parser.dart:47:19)
+#7      Loader._loadMapping (package:yaml/src/loader.dart:169:23)
+#8      Loader._loadNode (package:yaml/src/loader.dart:86:16)
+#9      Loader._loadSequence (package:yaml/src/loader.dart:140:20)
+#10     Loader._loadNode (package:yaml/src/loader.dart:84:16)
+#11     Loader._loadMapping (package:yaml/src/loader.dart:163:19)
+#12     Loader._loadNode (package:yaml/src/loader.dart:86:16)
+#13     Loader._loadMapping (package:yaml/src/loader.dart:163:19)
+#14     Loader._loadNode (package:yaml/src/loader.dart:86:16)
+#15     Loader._loadDocument (package:yaml/src/loader.dart:62:20)
+#16     Loader.load (package:yaml/src/loader.dart:54:20)
+#17     loadYamlDocument (package:yaml/yaml.dart:51:25)
+#18     loadYamlNode (package:yaml/yaml.dart:42:5)
+#19     loadYaml (package:yaml/yaml.dart:34:5)
+#20     _pluginFromPackage (package:flutter_tools/src/plugins.dart:304:27)
+#21     findPlugins (package:flutter_tools/src/plugins.dart:335:27)
+<asynchronous suspension>
+#22     buildWeb (package:flutter_tools/src/web/compile.dart:35:37)
+#23     _ResidentWebRunner.restart (package:flutter_tools/src/build_runner/resident_web_runner.dart:537:15)
+#24     TerminalHandler._commonTerminalInputHandler (package:flutter_tools/src/resident_runner.dart:1513:61)
+#25     TerminalHandler.processTerminalInput (package:flutter_tools/src/resident_runner.dart:1584:13)
+#26     _rootRunUnary (dart:async/zone.dart:1198:47)
+#27     _CustomZone.runUnary (dart:async/zone.dart:1100:19)
+#28     _CustomZone.runUnaryGuarded (dart:async/zone.dart:1005:7)
+#29     _BufferingStreamSubscription._sendData (dart:async/stream_impl.dart:357:11)
+#30     _BufferingStreamSubscription._add (dart:async/stream_impl.dart:285:7)
+#31     _SyncBroadcastStreamController._sendData (dart:async/broadcast_stream_controller.dart:385:25)
+#32     _BroadcastStreamController.add (dart:async/broadcast_stream_controller.dart:250:5)
+#33     _AsBroadcastStreamController.add (dart:async/broadcast_stream_controller.dart:484:11)
+#34     _rootRunUnary (dart:async/zone.dart:1198:47)
+#35     _CustomZone.runUnary (dart:async/zone.dart:1100:19)
+#36     _CustomZone.runUnaryGuarded (dart:async/zone.dart:1005:7)
+#37     _BufferingStreamSubscription._sendData (dart:async/stream_impl.dart:357:11)
+#38     _BufferingStreamSubscription._add (dart:async/stream_impl.dart:285:7)
+#39     _SinkTransformerStreamSubscription._add (dart:async/stream_transformers.dart:69:11)
+#40     _EventSinkWrapper.add (dart:async/stream_transformers.dart:15:11)
+#41     _StringAdapterSink.add (dart:convert/string_conversion.dart:238:11)
+#42     _StringAdapterSink.addSlice (dart:convert/string_conversion.dart:243:7)
+#43     _Utf8ConversionSink.addSlice (dart:convert/string_conversion.dart:317:20)
+#44     _ErrorHandlingAsciiDecoderSink.addSlice (dart:convert/ascii.dart:256:17)
+#45     _ErrorHandlingAsciiDecoderSink.add (dart:convert/ascii.dart:242:5)
+#46     _ConverterStreamEventSink.add (dart:convert/chunked_conversion.dart:72:18)
+#47     _SinkTransformerStreamSubscription._handleData (dart:async/stream_transformers.dart:121:24)
+#48     _rootRunUnary (dart:async/zone.dart:1198:47)
+#49     _CustomZone.runUnary (dart:async/zone.dart:1100:19)
+#50     _CustomZone.runUnaryGuarded (dart:async/zone.dart:1005:7)
+#51     _BufferingStreamSubscription._sendData (dart:async/stream_impl.dart:357:11)
+#52     _BufferingStreamSubscription._add (dart:async/stream_impl.dart:285:7)
+#53     _SyncStreamControllerDispatch._sendData (dart:async/stream_controller.dart:808:19)
+#54     _StreamController._add (dart:async/stream_controller.dart:682:7)
+#55     _StreamController.add (dart:async/stream_controller.dart:624:5)
+#56     _Socket._onData (dart:io-patch/socket_patch.dart:2020:41)
+#57     _rootRunUnary (dart:async/zone.dart:1206:13)
+#58     _CustomZone.runUnary (dart:async/zone.dart:1100:19)
+#59     _CustomZone.runUnaryGuarded (dart:async/zone.dart:1005:7)
+#60     _BufferingStreamSubscription._sendData (dart:async/stream_impl.dart:357:11)
+#61     _BufferingStreamSubscription._add (dart:async/stream_impl.dart:285:7)
+#62     _SyncStreamControllerDispatch._sendData (dart:async/stream_controller.dart:808:19)
+#63     _StreamController._add (dart:async/stream_controller.dart:682:7)
+#64     _StreamController.add (dart:async/stream_controller.dart:624:5)
+#65     new _RawSocket.<anonymous closure> (dart:io-patch/socket_patch.dart:1556:33)
+#66     _NativeSocket.issueReadEvent.issue (dart:io-patch/socket_patch.dart:1052:14)
+#67     _microtaskLoop (dart:async/schedule_microtask.dart:41:21)
+#68     _startMicrotaskLoop (dart:async/schedule_microtask.dart:50:5)
+#69     _runPendingImmediateCallback (dart:isolate-patch/isolate_patch.dart:118:13)
+#70     _RawReceivePortImpl._handleMessage (dart:isolate-patch/isolate_patch.dart:169:5)
+```
+
+## flutter doctor
+
+```
+[✓] Flutter (Channel beta, 1.20.0-7.2.pre, on Microsoft Windows [Version 10.0.19041.388], locale en-US)
+    • Flutter version 1.20.0-7.2.pre at C:\src\flutter
+    • Framework revision a2bde82fbd (3 days ago), 2020-07-18 15:16:35 -0700
+    • Engine revision 60b269d898
+    • Dart version 2.9.0 (build 2.9.0-21.2.beta)
+
+[✓] Android toolchain - develop for Android devices (Android SDK version 30.0.1)
+    • Android SDK at C:\Users\moham\AppData\Local\Android\sdk
+    • Platform android-30, build-tools 30.0.1
+    • Java binary at: C:\src\Android Studio\jre\bin\java
+    • Java version OpenJDK Runtime Environment (build 1.8.0_242-release-1644-b01)
+    • All Android licenses accepted.
+
+[✓] Chrome - develop for the web
+    • Chrome at C:\Program Files (x86)\Google\Chrome\Application\chrome.exe
+
+[✓] Android Studio (version 4.0)
+    • Android Studio at C:\src\Android Studio
+    • Flutter plugin version 47.1.2
+    • Dart plugin version 193.7361
+    • Java version OpenJDK Runtime Environment (build 1.8.0_242-release-1644-b01)
+
+[✓] Connected device (3 available)
+    • Web Server (web) • web-server • web-javascript • Flutter Tools
+    • Chrome (web)     • chrome     • web-javascript • Google Chrome 84.0.4147.89
+    • Edge (web)       • edge       • web-javascript • Microsoft Edge 83.0.478.61
+
+• No issues found!
+```
